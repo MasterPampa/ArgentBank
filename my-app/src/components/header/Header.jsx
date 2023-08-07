@@ -17,7 +17,7 @@ function Header() {
                     <p>Sign In</p>
                 </div>
                 <div className="nav_button">
-                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i className="fa fa-sign-out"></i>
                     <p>Sign Out</p>
                 </div>
             </nav>
