@@ -1,0 +1,29 @@
+$main-color: #2c3e50;
+
+header{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    margin: 5px 20px 5px 20px;
+    img{
+        width: 200px;
+    };
+    color: $main-color;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav_button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    p{
+        margin-left: 5px;
+    }
+}
