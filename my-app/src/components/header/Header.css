@@ -4,7 +4,6 @@ header {
   width: auto;
   justify-content: space-between;
   margin: 5px 20px 5px 20px;
-  color: #2c3e50;
 }
 header img {
   width: 200px;
@@ -22,6 +21,8 @@ nav {
   align-items: center;
   padding-left: 8px;
   font-weight: bold;
+  text-decoration: none;
+  color: #2c3e50;
 }
 .nav_button p {
   margin-left: 5px;

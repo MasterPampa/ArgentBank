@@ -9,7 +9,6 @@ header{
     img{
         width: 200px;
     };
-    color: $main-color;
 }
 nav{
     display: flex;
@@ -22,6 +21,8 @@ nav{
     align-items: center;
     padding-left: 8px;
     font-weight: bold;
+    text-decoration: none;
+    color: #2c3e50;
     p{
         margin-left: 5px;
     }

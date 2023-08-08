@@ -5,7 +5,7 @@ import Connect from "../../components/connect/Connect"
 
 function Signin () {
     return(
-        <div>
+        <div className="wrapper">
             <Header />
             <Connect />
             <Footer />
