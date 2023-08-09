@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Connect.css"
 
 function Connect () {
@@ -7,19 +8,19 @@ function Connect () {
                 <i class="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
                 <form>
-                    <div class="input-wrapper">
+                    <div className="input-wrapper">
                         <label for="username">Username</label>
                         <input type="text" id="username"/>
                     </div>
-                    <div class="input-wrapper">
+                    <div className="input-wrapper">
                         <label for="password">Password</label>
                         <input type="password" id="password"/>
                     </div>
-                    <div class="input-remember">
+                    <div className="input-remember">
                         <input type="checkbox" id="remember-me"/>
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <a href="./user.html" class="sign-in-button">Sign In</a>
+                    <Link to={`/user`} class="sign-in-button">Sign In</Link>
                 </form>
             </section>
         </main>

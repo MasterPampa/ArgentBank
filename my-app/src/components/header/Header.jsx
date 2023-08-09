@@ -9,18 +9,18 @@ function Header() {
                 <img src={Logo} alt="Logo" />
             </Link>
             <nav>
-                <div className="nav_button">
+                <Link to={`/user`} className="nav_button">
                     <i className="fa fa-circle-user"></i>
                     <p>$Username</p>
-                </div>
+                </Link>
                 <Link to={`/sign-in`} className="nav_button">
                     <i className="fa fa-circle-user"></i>
                     <p>Sign In</p>
                 </Link>
-                <div className="nav_button">
+                <Link to={`/`} className="nav_button">
                     <i className="fa fa-sign-out"></i>
                     <p>Sign Out</p>
-                </div>
+                </Link>
             </nav>
         </header>
     )
