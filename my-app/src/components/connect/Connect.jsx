@@ -1,30 +1,54 @@
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from './actions/authActions';
+import { useNavigate } from 'react-router-dom';
 import "./Connect.css"
 
-function Connect () {
+const Connect = () => {
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector(state => state.isAuthenticated);
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        await dispatch(login(username, password));
+    }
+    
+    useEffect(() => {
+        if (isAuthenticated === true) {
+            navigate('/');
+            console.log('connecté');
+            sessionStorage.getItem('accessToken');
+        }
+    }, [isAuthenticated, navigate]);
+    
+
     return(
         <main className="signin">
             <section className="signin__window">
-                <i class="fa fa-user-circle sign-in-icon"></i>
+                <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="input-wrapper">
-                        <label for="username">Username</label>
-                        <input type="text" id="username"/>
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" onChange={e => setUsername(e.target.value)}/>
                     </div>
                     <div className="input-wrapper">
-                        <label for="password">Password</label>
-                        <input type="password" id="password"/>
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" onChange={e => setPassword(e.target.value)} autoComplete="true"/>
                     </div>
                     <div className="input-remember">
                         <input type="checkbox" id="remember-me"/>
-                        <label for="remember-me">Remember me</label>
+                        <label htmlFor="remember-me">Remember me</label>
                     </div>
-                    <Link to={`/user`} class="sign-in-button">Sign In</Link>
+                    <button type="submit" className="sign-in-button">Sign In</button>
                 </form>
             </section>
         </main>
     )
 }
 
-export default Connect
+export default Connect;
