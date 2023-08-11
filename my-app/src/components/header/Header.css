@@ -19,11 +19,19 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 8px;
+  margin-left: 10px;
   font-weight: bold;
   text-decoration: none;
   color: #2c3e50;
 }
 .nav_button p {
   margin-left: 5px;
+}
+
+.signout {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=Header.css.map */

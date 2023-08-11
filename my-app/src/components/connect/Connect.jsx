@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from './actions/authActions';
+import { login } from '../actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import "./Connect.css"
 
@@ -14,14 +14,12 @@ const Connect = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        await dispatch(login(username, password));
+        dispatch(login(username, password));
     }
     
     useEffect(() => {
         if (isAuthenticated === true) {
-            navigate('/');
-            console.log('connecté');
-            sessionStorage.getItem('accessToken');
+            navigate('/user');
         }
     }, [isAuthenticated, navigate]);
     

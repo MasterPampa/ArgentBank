@@ -8,3 +8,7 @@ export const login = (email, password) => {
       }).then(response => response.json())
     };
   };
+
+ export const logout = () => {
+  return { type: 'LOGOUT' };
+};

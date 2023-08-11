@@ -12,16 +12,25 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-      // Mettre à jour le state avec les données de l'utilisateur
+      sessionStorage.getItem('accessToken');
       return {
         ...state,
         isAuthenticated: true,
         user: action.payload,
       };
     case 'LOGOUT':
-      // Réinitialiser le state lors de la déconnexion
-      sessionStorage.removeItem('accessToken'); // Supprimer le token
-      return initialState;
+      sessionStorage.removeItem('accessToken');
+      return {
+        ...state,
+        isAuthenticated: false, // Mise à jour de l'état isAuthenticated lors de la déconnexion
+        user: {
+          email: null,
+          password: null,
+          firstName: null,
+          lastName: null,
+          userName: null,
+        },
+      };
     default:
       return state;
   }
