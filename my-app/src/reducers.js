@@ -1,5 +1,5 @@
 const initialState = {
-  isAuthenticated: !!localStorage.getItem('accessToken'),
+  isAuthenticated: false,
     user: {
       email: null,
       firstName: null,

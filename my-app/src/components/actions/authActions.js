@@ -24,7 +24,6 @@ export const login = (email, password) => {
 
 
  export const logout = () => {
-  localStorage.removeItem('accessToken');
-  localStorage.removeItem('userProfile')
+
   return { type: 'LOGOUT' };
 };
