@@ -2,7 +2,6 @@ export const user = () => {
     return async (dispatch) => {
         try {
             const token = localStorage.getItem('accessToken');
-            console.log(token)
             const response = await fetch('http://localhost:3001/api/v1/user/profile', {
                 method: 'POST',
                 headers: {
@@ -13,8 +12,9 @@ export const user = () => {
             if (response.ok) {
                 const data = await response.json();
                 const userProfile = data.body;
-                console.log(userProfile)
 
+                localStorage.setItem('userProfile', JSON.stringify(userProfile));
+                
                 dispatch({
                     type: 'USER',
                     payload: {

@@ -8,14 +8,12 @@ header {
 header img {
   width: 200px;
 }
-
-nav {
+header nav {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
-.nav_button {
+header nav .nav_button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,14 +22,12 @@ nav {
   text-decoration: none;
   color: #2c3e50;
 }
-.nav_button p {
+header nav .nav_button p {
   margin-left: 5px;
 }
-
-.signout {
+header nav .signout {
   cursor: pointer;
 }
-
-.hide {
+header nav .hide {
   display: none;
 }/*# sourceMappingURL=Header.css.map */

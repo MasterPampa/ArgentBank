@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authActions';
 import { user } from '../actions/getProfileActions'
-import { useNavigate } from 'react-router-dom';
 import "./Connect.css"
 
 const Connect = () => {
@@ -11,7 +10,6 @@ const Connect = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -20,10 +18,10 @@ const Connect = () => {
     
     useEffect(() => {
         if (isAuthenticated === true) {
-            navigate('/user');
             dispatch(user());
+            window.location.href = '/user';
         }
-    }, [isAuthenticated, navigate]);
+    }, [isAuthenticated]);
     
 
     return(
