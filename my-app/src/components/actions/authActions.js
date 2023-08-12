@@ -10,8 +10,6 @@ export const login = (email, password) => {
       if (response.ok) {
         const data = await response.json();
         const token = data.body.token;
-
-        localStorage.setItem('accessToken', token);
         
         dispatch({
           type: 'LOGIN',

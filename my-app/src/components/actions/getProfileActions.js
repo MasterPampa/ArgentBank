@@ -1,20 +1,19 @@
 export const user = () => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => { 
         try {
-            const token = localStorage.getItem('accessToken');
+            const token = getState().token;
             const response = await fetch('http://localhost:3001/api/v1/user/profile', {
                 method: 'POST',
                 headers: {
                     'accept': 'application/json',
-                    'Authorization': 'Bearer' + token,
-                  }
-            })
+                    'Authorization': 'Bearer ' + token.token,
+                }
+            });
+
             if (response.ok) {
                 const data = await response.json();
                 const userProfile = data.body;
 
-                localStorage.setItem('userProfile', JSON.stringify(userProfile));
-                
                 dispatch({
                     type: 'USER',
                     payload: {
@@ -23,9 +22,11 @@ export const user = () => {
                         id: userProfile.id,
                         lastName: userProfile.lastName,
                         userName: userProfile.userName,
-                    }
-                })
-            } else {}
-        } catch (error){}
-    }
-}
+                    },
+                });
+            } else {
+            }
+        } catch (error) {
+        }
+    };
+};
