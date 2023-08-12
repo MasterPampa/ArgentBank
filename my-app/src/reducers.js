@@ -1,39 +1,50 @@
 const initialState = {
-  isAuthenticated: false,
-  user: {
-    email: null,
-    password: null,
-    firstName: null,
-    lastName: null,
-    userName: null,
+  isAuthenticated: !!localStorage.getItem('accessToken'),
+    user: {
+      email: null,
+      firstName: null,
+      id: null,
+      lastName: null,
+      userName: null,
   },
+  token:null,
 };
 
-const authReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-      sessionStorage.getItem('accessToken');
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload,
+        token: action.payload,
       };
     case 'LOGOUT':
-      sessionStorage.removeItem('accessToken');
       return {
         ...state,
-        isAuthenticated: false, // Mise à jour de l'état isAuthenticated lors de la déconnexion
+        isAuthenticated: false, 
         user: {
           email: null,
-          password: null,
+          id: null,
           firstName: null,
           lastName: null,
           userName: null,
         },
+        token: null,
+      };
+    case 'USER':
+      return {
+        ...state,
+        user: {
+          email: action.payload.email,
+          firstName: action.payload.firstName,
+          id: action.payload.id,
+          lastName: action.payload.lastName,
+          userName: action.payload.userName,
+          },
       };
     default:
       return state;
   }
 };
 
-export default authReducer;
+export default reducer;
