@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authActions';
-import { user } from '../actions/getProfileActions'
+import { getProfile } from '../actions/getProfileActions'
 import "./Connect.css"
 import { useNavigate } from 'react-router-dom';
 
@@ -20,10 +20,10 @@ const Connect = () => {
     
     useEffect(() => {
         if (isAuthenticated === true) {
-            dispatch(user());
+            dispatch(getProfile());
             navigate('/user');
         }
-    }, [isAuthenticated]);
+    }, [isAuthenticated, dispatch, navigate]);
     
 
     return(

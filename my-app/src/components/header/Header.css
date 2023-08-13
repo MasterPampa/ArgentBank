@@ -22,6 +22,9 @@ header nav .nav_button {
   text-decoration: none;
   color: #2c3e50;
 }
+header nav .nav_button:hover {
+  text-decoration: underline;
+}
 header nav .nav_button p {
   margin-left: 5px;
 }

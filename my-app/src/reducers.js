@@ -1,13 +1,13 @@
 const initialState = {
   isAuthenticated: false,
-    user: {
-      email: null,
-      firstName: null,
-      id: null,
-      lastName: null,
-      userName: null,
+  user: {
+    email: null,
+    firstName: null,
+    id: null,
+    lastName: null,
+    userName: null,
   },
-  token:null,
+  token: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,32 +19,29 @@ const reducer = (state = initialState, action) => {
         token: action.payload,
       };
     case 'LOGOUT':
-      return {
-        ...state,
-        isAuthenticated: false, 
-        user: {
-          email: null,
-          id: null,
-          firstName: null,
-          lastName: null,
-          userName: null,
-        },
-        token: null,
-      };
+      return initialState;
     case 'USER':
       return {
         ...state,
         user: {
+          ...state.user,
           email: action.payload.email,
           firstName: action.payload.firstName,
           id: action.payload.id,
           lastName: action.payload.lastName,
           userName: action.payload.userName,
-          },
+        },
+      };
+    case 'USER_NAME':
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          userName: action.payload,
+        },
       };
     default:
       return state;
   }
 };
-
-export default reducer;
+export default reducer

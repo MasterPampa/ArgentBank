@@ -1,4 +1,4 @@
-export const user = () => {
+export const getProfile = () => {
     return async (dispatch, getState) => { 
         try {
             const token = getState().token;
@@ -13,7 +13,6 @@ export const user = () => {
             if (response.ok) {
                 const data = await response.json();
                 const userProfile = data.body;
-
                 dispatch({
                     type: 'USER',
                     payload: {

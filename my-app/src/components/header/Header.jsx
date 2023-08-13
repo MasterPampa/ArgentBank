@@ -1,5 +1,5 @@
 import Logo from "../../img/argentBankLogo.png"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Header.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/authActions';
@@ -9,9 +9,11 @@ function Header() {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.isAuthenticated);
     const userName = useSelector(state => state.user.firstName)
+    const navigate = useNavigate();
+
     const handleLogout = () => {
         dispatch(logout());
-        window.location.href = '/';
+        navigate('/');
     };
 
     return (
@@ -33,7 +35,7 @@ function Header() {
                     </Link>
                 )}
                 {isAuthenticated && (
-                    <div className='nav_button signout' onClick={() => { if (window.confirm('Are you sure you wish to logout?')) {handleLogout()}} } >
+                    <div className='nav_button signout' onClick={handleLogout}>
                         <i className="fa fa-sign-out"></i>
                         <p>Sign Out</p>
                     </div>
