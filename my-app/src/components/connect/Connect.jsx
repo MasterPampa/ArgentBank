@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authActions';
 import { getProfile } from '../actions/getProfileActions'
-import "./Connect.css"
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie'; // Import js-cookie library
+
+import "./Connect.css"
 
 const Connect = () => {
     const dispatch = useDispatch();
@@ -15,7 +16,6 @@ const Connect = () => {
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
 
-   
     const handleSubmit = async e => {
         e.preventDefault();
         
