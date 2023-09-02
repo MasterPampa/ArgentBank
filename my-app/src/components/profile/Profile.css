@@ -107,4 +107,28 @@
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+
+@media (max-width: 720px) {
+  .account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .account__wrapperButton {
+    width: 100%;
+    flex: 1;
+  }
+  .account__wrapperButton .transactionButton {
+    width: 100%;
+  }
 }/*# sourceMappingURL=Profile.css.map */

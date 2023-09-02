@@ -13,4 +13,11 @@
   border: 10px solid #00bc77;
   border-radius: 50%;
   padding: 1rem;
+}
+
+@media (max-width: 920px) {
+  .features {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=Features.css.map */
