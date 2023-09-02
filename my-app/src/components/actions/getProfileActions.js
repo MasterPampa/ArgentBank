@@ -23,9 +23,9 @@ export const getProfile = () => {
                         userName: userProfile.userName,
                     },
                 });
-            } else {
+            } else { console.log("Erreur lors de la requete. Statut de réponse:", response.status);
             }
-        } catch (error) {
+        } catch (error) { console.log("Erreur interne");
         }
     };
 };

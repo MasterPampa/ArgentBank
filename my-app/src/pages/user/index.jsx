@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Profile from '../../components/profile/Profile';
+import Accounts from '../../components/accounts/Accounts';
 
 function User() {
     const isAuthenticated = useSelector(state => state.isAuthenticated);
@@ -18,7 +19,10 @@ function User() {
     return (
         <div className="wrapper">
             <Header />
-            <Profile />
+            <main className='background'>
+                <Profile />
+                <Accounts />
+            </main>
             <Footer />
         </div>
     );

@@ -12,14 +12,14 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+
     case 'LOGIN':
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload,
       };
-    case 'LOGOUT':
-      return initialState;
+
     case 'USER':
       return {
         ...state,
@@ -32,6 +32,7 @@ const reducer = (state = initialState, action) => {
           userName: action.payload.userName,
         },
       };
+
     case 'USER_NAME':
       return {
         ...state,
@@ -40,6 +41,10 @@ const reducer = (state = initialState, action) => {
           userName: action.payload,
         },
       };
+
+    case 'LOGOUT':
+      return initialState;
+  
     default:
       return state;
   }

@@ -6,15 +6,14 @@ import storage from 'redux-persist/lib/storage';
 
 // Configuration de la persistance
 const persistConfig = {
-    key: 'root', // Clé racine pour l'état persisté
-    storage, // Utiliser le stockage par défaut (localStorage pour le web)
+    key: 'root', 
+    storage, // Utiliser le stockage par défaut (localStorage)
 };
 const persistedReducer = persistReducer(persistConfig, reducer);
 
 // Création du store
 const store = createStore(persistedReducer, applyMiddleware(thunk));
 
-// Persiste l'état du store
 const persistor = persistStore(store);
 
 // Abonnement pour afficher les mises à jour de l'état

@@ -15,9 +15,9 @@ export const login = (email, password) => {
           type: 'LOGIN',
           payload: { token }
         });
-      } else {
+      } else { console.log("Erreur de la connexion. Statut de réponse:", response.status);
       }
-    } catch (error) {
+    } catch (error) { console.log("Erreur interne");
     }
   };
 };

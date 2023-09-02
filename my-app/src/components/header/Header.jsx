@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./Header.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/authActions';
-import Cookies from "js-cookie";
 
 function Header() {
 
